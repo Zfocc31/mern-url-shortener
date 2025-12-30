@@ -1,92 +1,179 @@
-# URL Shortener
+🚀 MERN URL Shortener with Analytics
 
-A full-stack URL shortening service built with React, Node.js, Express, and MongoDB.
+A production-ready full-stack URL shortening application built using the MERN stack, featuring click analytics, a responsive UI, and cloud deployment.
 
-## Features
+🔗 Live Demo
+👉 https://mern-url-shortener-steel.vercel.app/
 
-- 🔗 Convert long URLs into short, shareable links
-- 📊 Track click analytics for each shortened URL
-- 📋 Copy shortened URLs with one click
-- 📱 Responsive design works on all devices
-- ⚡ Fast and lightweight
+✨ Features
 
-## Technologies Used
+🔗 Convert long URLs into short, shareable links
 
-**Frontend:**
-- React.js
-- Framer Motion (for animations)
-- Heroicons (for icons)
-- Axios (for API calls)
+📊 Track click analytics for each shortened URL
 
-**Backend:**
-- Node.js
-- Express.js
-- MongoDB (with Mongoose ODM)
-- ShortID (for generating unique codes)
+📋 One-click copy to clipboard
 
-## Installation
+🌐 Automatic redirection to original URLs
 
-### Prerequisites
-- Node.js (v14 or higher)
-- MongoDB (local or Atlas cluster)
-- Git
+📱 Responsive and clean UI
 
-### Setup Instructions
+⚡ Fast and lightweight
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/your-username/url-shortener.git
-   cd url-shortener
-2. **Set up the backend**
-   ```bash
-   cd url-shortener-backend
-   npm install```
-3. **Configure environment variables**
-Create a .env file in the backend directory:
-   ```bash
-   MONGODB_URI=mongodb://localhost:27017/urlshortener
-   PORT=5000
-4. **Set up the frontend**
-   ```bash
-   cd ../url-shortener-frontend
-   npm install
-5. **Running the Application**
-Start the backend server
-   ```bash
-   cd url-shortener-backend
-   node server.js
-6. **Start the frontend development server**
-   ```bash
-   cd url-shortener-frontend
-   npm start
-7. **Access the application**
-Open http://localhost:3000 in your browser
+☁️ Cloud deployed with automatic builds and redeployments
 
-### Project Structure
+🛠 Tech Stack
+Frontend
 
-url-shortener/
-├── url-shortener-backend/       # Backend code
-│   ├── models/                  # MongoDB models
-│   │   └── shortUrl.js          # URL model definition
-│   ├── server.js               # Express server
-│   ├── package.json
-│   └── .env                    # Environment variables
+React.js
+
+Axios (API communication)
+
+Framer Motion (animations)
+
+Heroicons (icons)
+
+Vercel (deployment)
+
+Backend
+
+Node.js
+
+Express.js
+
+MongoDB Atlas
+
+Mongoose ODM
+
+ShortID (unique short codes)
+
+Render (deployment)
+
+🧠 Architecture Overview
+React (Vercel)
+   ↓
+Express REST API (Render)
+   ↓
+MongoDB Atlas
+
+
+Frontend communicates with backend via REST APIs
+
+Backend handles URL creation, redirection, and analytics
+
+MongoDB Atlas stores URLs and click counts
+
+Automatic redeployment on every GitHub push
+
+📂 Project Structure
+mern-url-shortener/
 │
-├── url-shortener-frontend/      # Frontend code
-│   ├── public/                 # Static files
-│   ├── src/                    # React components
-│   │   ├── App.js              # Main component
-│   │   └── index.js            # Entry point
+├── backend/
+│   ├── models/
+│   │   └── shortUrl.js
+│   ├── index.js
 │   ├── package.json
-│   └── README.md
+│   └── .env
+│
+├── frontend/
+│   ├── public/
+│   ├── src/
+│   │   ├── App.js
+│   │   └── index.js
+│   ├── package.json
 │
 ├── .gitignore
-└── README.md                   # This file
+└── README.md
 
-### API Endpoints
+🔌 API Endpoints
+Endpoint	Method	Description
+/shorten	POST	Create a new short URL
+/:shortCode	GET	Redirect to the original URL
+/api/urls	GET	Fetch all shortened URLs
+⚙️ Local Setup
+Prerequisites
 
-| Endpoint         | Method | Description                       |
-|------------------|--------|-----------------------------------|
-| `/shorten`       | POST   | Create a new short URL            |
-| `/:shortCode`    | GET    | Redirect to the original URL      |
-| `/api/urls`      | GET    | Get all shortened URLs            |
+Node.js (v14+)
+
+MongoDB (Local or Atlas)
+
+Git
+
+1️⃣ Clone the Repository
+git clone https://github.com/Zfocc31/mern-url-shortener.git
+cd mern-url-shortener
+
+2️⃣ Backend Setup
+cd backend
+npm install
+
+
+Create a .env file:
+
+MONGODB_URI=your_mongodb_connection_string
+PORT=5000
+
+
+Start backend:
+
+npm start
+
+3️⃣ Frontend Setup
+cd ../frontend
+npm install
+npm start
+
+
+Open in browser:
+
+http://localhost:3000
+
+☁️ Deployment
+
+Backend deployed on Render
+
+Frontend deployed on Vercel
+
+Automatic rebuild and redeployment on every GitHub push
+
+Environment Variables (Production)
+
+Backend
+
+MONGODB_URI
+
+PORT
+
+Frontend
+
+REACT_APP_API_BASE_URL
+
+🧪 Engineering Highlights
+
+Fixed Express route shadowing issue (/:shortCode vs /api/urls)
+
+Environment-based API configuration for local and production
+
+Implemented click tracking for shortened URLs
+
+Handled long URL overflow in UI using CSS truncation
+
+Clean Git history with original commits
+
+Fully working production deployment
+
+📌 Future Improvements
+
+Custom short URL aliases
+
+User authentication and dashboards
+
+Rate limiting and abuse protection
+
+Analytics charts and insights
+
+QR code generation
+
+👨‍💻 Author
+
+Rahul Sinha
+GitHub: https://github.com/Zfocc31
